@@ -3,6 +3,16 @@ entries:
   eurek8s-controller:
   - apiVersion: v2
     appVersion: v0.1.0
+    created: "2022-01-16T19:36:21.882262841Z"
+    description: A Helm chart that installs Eurek8s Controller
+    digest: b57245f37fb7d06a8645a54ea24a794d26d14eed89414f2767469a0944075437
+    name: eurek8s-controller
+    type: application
+    urls:
+    - https://github.com/Eurek8s/helm-charts/releases/download/eurek8s-controller-0.1.3/eurek8s-controller-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
+    appVersion: v0.1.0
     created: "2022-01-16T17:46:09.879397069Z"
     description: A Helm chart that installs Eurek8s Controller
     digest: 26b809d5379c1591452386c564c0e426c754d48119a5ccef6ac190f8c7deb4ba
@@ -21,4 +31,4 @@ entries:
     urls:
     - https://github.com/Eurek8s/helm-charts/releases/download/eurek8s-controller-0.1.1/eurek8s-controller-0.1.1.tgz
     version: 0.1.1
-generated: "2022-01-16T17:46:09.87941057Z"
+generated: "2022-01-16T19:36:21.882874452Z"
