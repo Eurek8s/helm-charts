@@ -35,15 +35,19 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
             - name: CONFIG
+              {{- $envsLength := len .Values.eureka.environments }}
+              {{- $position := 0 | int }}
+
               value: |
-                {{- $envsLength := len .Values.eureka.environments }}
-                {{- $position := 0 | int }}
-                {
                 {{- range $configkey, $configvalue := .Values.eureka.environments }}
                   {{- $position = add1 $position }}
-                  "{{$configkey}}":"{{$configvalue}}" {{- if ne $position $envsLength }},{{ end }}
+                  {{ if eq $position 1 }}{{ printf "{" }}{{ end }}{{ printf "\"%s\":[\"%s\"]" $configkey $configvalue }}
+                  {{- if ne $position $envsLength }}
+                  ,
+                  {{- else }} {{- printf "}" }}
+                  {{- end }}
                 {{- end }}
-                }
+
           ports:
             - name: http
               containerPort: 80

@@ -13,9 +13,10 @@ fullnameOverride: ""
 
 eureka:
   environments: {}
-  # example:
-  # qa: qa1.example.com,qa2.example.com
-  # prd: prd1.example.com,prd2.example.com
+  # Example:
+  # environments:
+  #   qa: https://qa1.example.com,https://qa2.example.com/eureka
+  #   prd: https://prd1.example.com,https://prd2.example.com/eureka
 
 
 serviceAccount:
