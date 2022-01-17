@@ -2,6 +2,7 @@ kind: ClusterRole
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
   name: {{ template "eurek8s-controller.fullname" . }}-cluster-role
+  namespace: {{ .Release.Namespace }}
   labels:
     {{- include "eurek8s-controller.labels" . | nindent 4 }}
 rules:
@@ -16,6 +17,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
   name: {{ template "eurek8s-controller.fullname" . }}-cluster-role-binding
+  namespace: {{ .Release.Namespace }}
   labels:
     {{- include "eurek8s-controller.labels" . | nindent 4 }}
 roleRef:
@@ -25,3 +27,4 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: {{ include "eurek8s-controller.serviceAccountName" . }}
+    namespace: {{ .Release.Namespace }}
