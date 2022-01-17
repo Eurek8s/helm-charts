@@ -46,7 +46,7 @@ metadata:
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
-  name: leader-election-role
+  name: {{ template "eurek8s-controller.fullname" . }}-leader-election-role
 subjects:
   - kind: ServiceAccount
     name: {{ include "eurek8s-controller.serviceAccountName" . }}
