@@ -55,14 +55,21 @@ spec:
             - name: monitoring
               containerPort: 8080
               protocol: TCP
+            - name: health
+              containerPort: 8081
+              protocol: TCP
           livenessProbe:
             httpGet:
-              path: /metrics
-              port: monitoring
+              path: /healthz
+              port: health
+            initialDelaySeconds: 15
+            periodSeconds: 20
           readinessProbe:
             httpGet:
-              path: /metrics
-              port: monitoring
+              path: /readyz
+              port: health
+            initialDelaySeconds: 5
+            periodSeconds: 10
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
