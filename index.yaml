@@ -3,6 +3,19 @@ entries:
   eurek8s-controller:
   - apiVersion: v2
     appVersion: v0.1.1
+    created: "2022-01-17T12:25:57.866120614Z"
+    description: 'Eurek8s Controller - A controller to handle Eureka with applications
+      deployed into Kubernetes. Eurek8s can also be used as a strategy to remove Eureka
+      easily.  '
+    digest: 96774a199b00183aca18902a73d24349527a49288ae8ae873ee9ead31f86270c
+    kubeVersion: '>= 1.21.0-0'
+    name: eurek8s-controller
+    type: application
+    urls:
+    - https://github.com/Eurek8s/helm-charts/releases/download/eurek8s-controller-0.3.0/eurek8s-controller-0.3.0.tgz
+    version: 0.3.0
+  - apiVersion: v2
+    appVersion: v0.1.1
     created: "2022-01-17T12:09:55.607076069Z"
     description: 'Eurek8s Controller - A controller to handle Eureka with applications
       deployed into Kubernetes. Eurek8s can also be used as a strategy to remove Eureka
@@ -161,4 +174,4 @@ entries:
     urls:
     - https://github.com/Eurek8s/helm-charts/releases/download/eurek8s-controller-0.1.1/eurek8s-controller-0.1.1.tgz
     version: 0.1.1
-generated: "2022-01-17T12:09:55.607184469Z"
+generated: "2022-01-17T12:25:57.866292527Z"
