@@ -52,14 +52,17 @@ spec:
             - name: http
               containerPort: 80
               protocol: TCP
+            - name: monitoring
+              containerPort: 8080
+              protocol: TCP
           livenessProbe:
             httpGet:
-              path: /
-              port: http
+              path: /metrics
+              port: monitoring
           readinessProbe:
             httpGet:
-              path: /
-              port: http
+              path: /metrics
+              port: monitoring
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
