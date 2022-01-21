@@ -10,7 +10,7 @@ rules:
     verbs: [ 'list', 'get', 'watch' ]
   - apiGroups: [ "" ]
     resources: [ "services" ]
-    verbs: [ 'list', 'get' ]
+    verbs: [ 'list', 'get', 'watch' ]
   - apiGroups: [ 'discovery.eurek8s.com' ]
     resources: [ 'eurekaapplications', "eurekaapplications/status" ]
     verbs: [ '*' ]
